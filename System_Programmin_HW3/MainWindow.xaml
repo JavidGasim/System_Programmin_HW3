@@ -1,0 +1,44 @@
+﻿<Window x:Class="System_Programmin_HW3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:System_Programmin_HW3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Button Name="file_btn" Width="100" Height="50" VerticalAlignment="Center" HorizontalAlignment="Left"
+                    Content="FROM FILE" Margin="35,0,0,0" Click="file_btn_Click"/>
+
+            <TextBox Name="file_txtbox" Width="550" Height="50" Margin="195,29,55,30"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Button Name="file2_btn" Width="100" Height="50" VerticalAlignment="Center" HorizontalAlignment="Left"
+            Content="TO FILE" Margin="35,0,0,0" Click="file2_btn_Click"/>
+
+            <TextBox Name="file2_txtbox" Width="550" Height="50" Margin="193,29,57,30"/>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <ProgressBar Name="pb" Width="650" Height="50" 
+                         Maximum="{Binding MaxVal,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                         Value="{Binding FileVal,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <RadioButton Name="encrypt" Content="Encrypt" IsChecked="True" FontSize="12" Margin="33,46,676,38" />
+            <RadioButton Name="decrypt" Content="Decrypt" IsChecked="False" FontSize="12" Margin="129,46,586,38"/>
+            <Button Name="start_btn" Click="start_btn_Click" Width="100" Content="START" Margin="400,46,300,38"/>
+            <Button Name="cancel_btn" Click="cancel_btn_Click" Width="100" Content="CANCEL" Margin="585,46,115,38"/>
+        </Grid>
+    </Grid>
+</Window>
